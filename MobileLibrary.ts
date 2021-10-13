@@ -13,6 +13,8 @@ export class MobileLibrary
         this.location = location;
         this.mobiles = mobiles;
 
+        this.totalPrice = this.totalPriceCalculator();
+
     }
 
 
@@ -57,7 +59,7 @@ export class MobileLibrary
         this.totalPrice = newTotalPrice;
     }
 
-    public totalPriceCalculator():number
+    private totalPriceCalculator():number
     {
         let totalPrice : number = 0;
 
@@ -69,5 +71,26 @@ export class MobileLibrary
 
 
         return totalPrice;
+    }
+
+
+    public printLibrary()
+    {
+
+        console.log("This is all my mobiles.");
+
+        for(let i: number = 0; i<this.mobiles.length; i++)
+        {
+            console.log("\n");
+            
+            this.mobiles[i].print()
+            
+            
+        }
+
+        console.log("\n · Price overall: "+this.getTotalPrice());
+        
+        
+
     }
 }

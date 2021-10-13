@@ -6,6 +6,7 @@ var MobileLibrary = /** @class */ (function () {
         this.name = name;
         this.location = location;
         this.mobiles = mobiles;
+        this.totalPrice = this.totalPriceCalculator();
     }
     MobileLibrary.prototype.getName = function () {
         return this.name;
@@ -37,6 +38,14 @@ var MobileLibrary = /** @class */ (function () {
             totalPrice += this.mobiles[i].getPrice();
         }
         return totalPrice;
+    };
+    MobileLibrary.prototype.printLibrary = function () {
+        console.log("This is all my mobiles.");
+        for (var i = 0; i < this.mobiles.length; i++) {
+            console.log("\n");
+            this.mobiles[i].print();
+        }
+        console.log("\n · Price overall: " + this.getTotalPrice());
     };
     return MobileLibrary;
 }());

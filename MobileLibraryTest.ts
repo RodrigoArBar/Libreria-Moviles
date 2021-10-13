@@ -45,11 +45,11 @@ mobiles = [movil1, movil2, movil3, movil4];
 
 let Libreria = new MobileLibrary("Almacen1", "Madrid", mobiles);
 
-Libreria.totalPriceCalculator()
+Libreria.getTotalPrice()
 
 console.log(Libreria);
 
-console.log(Libreria.totalPriceCalculator());
+console.log(Libreria.getTotalPrice());
 
 Libreria.setLocation("Getafe")
 
@@ -65,3 +65,7 @@ Libreria.setTotalPrice(30002)
 console.log(Libreria.getTotalPrice());
 
 
+
+console.log("\n\n");
+
+Libreria.printLibrary()
